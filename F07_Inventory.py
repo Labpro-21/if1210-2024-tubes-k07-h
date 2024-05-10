@@ -61,8 +61,6 @@ def inventory (user_id):
             print(f"Quantity : {inventory_matrix[id_detail-1][2]}")
         else: print("Id item tidak valid")
 
-inventory(1)
-
 
 """
 Aplikasi
