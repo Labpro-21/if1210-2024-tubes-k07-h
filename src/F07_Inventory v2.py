@@ -1,5 +1,4 @@
 # program F07 - Inventory
-# asumsi semua csv sudah dibuka
 
 def inventory (user_id):
     # Print 2 baris pertama inventory list (User ID dan OWCA)
@@ -22,7 +21,7 @@ def inventory (user_id):
     for i in range(len(monster)):
         for j in range(monster_count):
             if (monster[i][0]) == (monster_id[j][0]):
-                print(f"{j+1}. Monster     (Name: {monster[i][1]}, Lvl: {monster_id[j][1]}, HP: {monster[i][4]})")
+                print(f"{j+1}. Monster     (Name: {monster[i][1]}, Lvl: {monster_id[j][1]}, HP: {math.floor(int(monster[i][4])+int(monster[i][4])*((int(monster_id[j][1])-1)*10/100))})")
                 inventory_matrix.append(monster[i])
 
     potion_count = 0 # banyak jenis potion yang dimiliki
@@ -51,9 +50,9 @@ def inventory (user_id):
         if id_detail <= monster_count:
             print("Monster")
             print(f"Name      : {inventory_matrix[id_detail-1][1]}")
-            print(f"ATK Power : {inventory_matrix[id_detail-1][2]}")
-            print(f"DEF Power : {inventory_matrix[id_detail-1][3]}")
-            print(f"HP        : {inventory_matrix[id_detail-1][4]}")
+            print(f"ATK Power : {math.floor(int(inventory_matrix[id_detail-1][2])+int(inventory_matrix[id_detail-1][2])*((int(monster_id[id_detail-1][1])-1)*10/100))}")
+            print(f"DEF Power : {math.floor(int(inventory_matrix[id_detail-1][3])+int(inventory_matrix[id_detail-1][3])*((int(monster_id[id_detail-1][1])-1)*10/100))}")
+            print(f"HP        : {math.floor(int(inventory_matrix[id_detail-1][4])+int(inventory_matrix[id_detail-1][4])*((int(monster_id[id_detail-1][1])-1)*10/100))}")
             print(f"Level     : {monster_id[id_detail-1][1]}")
         elif id_detail <= (monster_count + potion_count):
             print("Potion")
@@ -61,22 +60,21 @@ def inventory (user_id):
             print(f"Quantity : {inventory_matrix[id_detail-1][2]}")
         else: print("Id item tidak valid")
 
-
 """
 Aplikasi
 Inventory(1)
 INVENTORY LIST (User ID: 1)
 Jumlah O.W.C.A. Coin-mu sekarang 0
-1. Monster     (Name: Hydra, Lvl: 2, HP: 4)
-2. Monster     (Name: Medusa, Lvl: 1, HP: 3)
+1. Monster     (Name: Hydra, Lvl: 2, HP: 440)
+2. Monster     (Name: Medusa, Lvl: 1, HP: 300)
 3. Potion      (Type: strength, Qty: 2)
 Ketikkan id untuk menampilkan detail item:
 >>> 1
 Monster
 Name      : Hydra
-ATK Power : 55
-DEF Power : 70
-HP        : 4
+ATK Power : 60
+DEF Power : 77
+HP        : 440
 Level     : 2
 Ketikkan id untuk menampilkan detail item:
 >>> 2
@@ -84,7 +82,7 @@ Monster
 Name      : Medusa
 ATK Power : 35
 DEF Power : 60
-HP        : 3
+HP        : 300
 Level     : 1
 Ketikkan id untuk menampilkan detail item:
 >>> 3
