@@ -277,4 +277,3 @@ def battle():
             print("Anda berhasil kabur dari BATTLE!")
             break
     return ''
-battle()
