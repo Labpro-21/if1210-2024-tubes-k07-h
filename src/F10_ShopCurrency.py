@@ -1,4 +1,6 @@
-def shop(owca, inventory_matrix, monster_shop, item_shop):
+def shop(monster_shop, item_shop, monster, monster_inventory, item_inventory):
+    #owca harusnya dari user
+    owca = 100
     #DEFAULT SHOP
     #default monster di shop
     monster_in_shop = []
@@ -35,7 +37,7 @@ def shop(owca, inventory_matrix, monster_shop, item_shop):
                 beli_monster = int(input(">>> Masukkan id monster:"))
                 if owca >= int(monster_in_shop[int(beli_monster)][3]):
                     print(f"Berhasil membeli item {monster_in_shop[int(beli_monster)][1]}")
-                    inventory_matrix.append(monster_in_shop[beli_monster])
+                    monster_inventory.append(monster_in_shop[beli_monster])
                     owca -= int(monster_in_shop[int(beli_monster)][3])
                     monster_shop[int(beli_monster)][1] = int(monster_shop[int(beli_monster)][1]) - 1
                 else:
@@ -46,7 +48,7 @@ def shop(owca, inventory_matrix, monster_shop, item_shop):
                 jumlah_beli = int(input(">>> Masukkan jumlah: "))
                 if owca >= int(item_in_shop[beli_potion][2]) * jumlah_beli:
                     print(f"Berhasil membeli item: {jumlah_beli} {item_in_shop[beli_potion][0]}. Item sudah masuk ke inventory-mu")
-                    inventory_matrix.append(item_shop[beli_potion])
+                    item_inventory.append(item_shop[beli_potion])
                     owca -= int(item_in_shop[beli_potion][2]) * jumlah_beli
                     item_in_shop[beli_potion][1] = int(item_in_shop[beli_potion][1]) - jumlah_beli
                 else:
@@ -55,5 +57,4 @@ def shop(owca, inventory_matrix, monster_shop, item_shop):
         elif action == "keluar":
             print("Mr. Yanto bilang makasih, belanja lagi ya nanti :)")
             quit = True
-        
-    return inventory_matrix, owca
+    return ''
