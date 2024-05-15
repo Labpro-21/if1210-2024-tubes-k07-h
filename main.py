@@ -1,10 +1,24 @@
 def main():
+    print('''
+
+ ██████╗  █████╗ ███╗   ███╗███████╗    ███████╗████████╗ █████╗ ██████╗ ████████╗
+██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝
+██║  ███╗███████║██╔████╔██║█████╗      ███████╗   ██║   ███████║██████╔╝   ██║   
+██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ╚════██║   ██║   ██╔══██║██╔══██╗   ██║   
+╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ███████║   ██║   ██║  ██║██║  ██║   ██║   
+ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+                                                                                  ''')
     from src.csv_to_array import csv_to_array
+    from src.F01_Register import register
+    from src.F02_Login import login
     from src.F08_Battle import battle
     from src.F10_ShopCurrency import shop
     from src.F12_ShopManagement import shop_management
     from src.F13_MonsterManagement import monster_management
     from src.F14_Load import load
+
+    #INISIASI KONDISI
+    status = False #artinya belum login
 
     monster = csv_to_array('monster.csv')
     user = csv_to_array('user.csv')
@@ -13,12 +27,12 @@ def main():
     item_shop = csv_to_array('item_shop.csv')
     monster_shop = csv_to_array('monster_shop.csv')
 
-    print(monster_shop)
-    cmd = input(">>>")
+    cmd = input(">>> ")
     if cmd == "REGISTER":
-        register()
+        register(status, user, monster, monster_inventory, item_inventory)
+        cmd = input(">>> ")
     elif cmd == "LOGIN":
-        login()
+        login(user, status)
     elif cmd == "LOGOUT":
         logout()
     elif cmd == "HELP":
