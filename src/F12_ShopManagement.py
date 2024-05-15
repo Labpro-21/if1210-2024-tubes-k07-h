@@ -1,5 +1,16 @@
+####################F12###############################
 
-def shop_management(item_in_shop, monster_in_shop, item_shop, monster_shop, monster):
+def shop_management(item_shop, monster_shop, monster):
+    #DEFAULT SHOP
+    #default monster di shop
+    monster_in_shop = []
+    for i in range (len(monster_shop)):
+        monster_in_shop.append(monster[i])
+
+    #default potion di shop
+    item_in_shop = []
+    for i in range (3):
+        item_in_shop.append(item_shop[i])
 
     #inisiasi kondisi
     quit = False
