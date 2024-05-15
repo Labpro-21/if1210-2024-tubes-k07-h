@@ -1,28 +1,19 @@
 def main():
-    from src.F08_Battle import battle
-    from src.F14_Load import load
-    from src.F12_ShopManagement import shop_management
     from src.csv_to_array import csv_to_array
-
+    from src.F08_Battle import battle
+    from src.F10_ShopCurrency import shop
+    from src.F12_ShopManagement import shop_management
+    from src.F13_MonsterManagement import monster_management
+    from src.F14_Load import load
 
     monster = csv_to_array('monster.csv')
-    user = csv_to_array("user.csv")
+    user = csv_to_array('user.csv')
     item_inventory = csv_to_array('item_inventory.csv')
     monster_inventory = csv_to_array('monster_inventory.csv')
     item_shop = csv_to_array('item_shop.csv')
     monster_shop = csv_to_array('monster_shop.csv')
 
-    #DEFAULT SHOP
-    #default monster di shop
-    monster_in_shop = []
-    for i in range (len(monster_shop)):
-        monster_in_shop.append(monster[i])
-
-    #default potion di shop
-    item_in_shop = []
-    for i in range (3):
-        item_in_shop.append(item_shop[i])
-
+    print(monster_shop)
     cmd = input(">>>")
     if cmd == "REGISTER":
         register()
@@ -39,13 +30,13 @@ def main():
     elif cmd == "ARENA":
         arena()
     elif cmd == "SHOP":
-        shop()
+        shop(monster_shop, item_shop, monster, monster_inventory, item_inventory)
     elif cmd == "SHOPMANAGEMENT":
-        shop_management(item_in_shop, monster_in_shop, item_shop, monster_shop)
+        shop_management(item_shop, monster_shop, monster)
     elif cmd == "LABORATORY":
         laboratory()
     elif cmd == "MONSTER":
-        monster()
+        monster_management(monster)
     elif cmd == "LOAD":
         load()
     elif cmd == "SAVE":
