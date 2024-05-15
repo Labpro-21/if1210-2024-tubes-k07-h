@@ -1,8 +1,8 @@
-id;type;atk_power;def_power;hp
-1;Hydra;20;45;90
-2;Cerber;15;30;80
-3;Medusa;25;35;70
-4;Chimer;10;30;95
-5;Minota;15;25;85
-6;Empusa;10;30;90
-7;Siren;15;20;75
+id,type,atk_power,def_power,hp
+1,Hydra,20,45,90
+2,Cerber,15,30,80
+3,Medusa,25,35,70
+4,Chimer,10,30,95
+5,Minota,15,25,85
+6,Empusa,10,30,90
+7,Siren,15,20,75

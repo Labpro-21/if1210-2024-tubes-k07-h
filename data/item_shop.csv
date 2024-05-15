@@ -1,4 +1,4 @@
-type;stock;price
-Strength Potion;5;10
-Resilience Potion;4;9
-Healing  Potion;3;8
+type,stock,price
+Strength Potion,5,10
+Resilience Potion,4,9
+
