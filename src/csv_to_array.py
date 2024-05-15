@@ -4,7 +4,7 @@ def csv_separate(line):
     array = []
     j = 0
     for i in range (len(line)):
-        if ';' == line[i]:
+        if ',' == line[i]:
             array.append(line[j:i])
             j = i + 1
     array.append(line[j:])
@@ -14,7 +14,7 @@ def csv_separate(line):
 def csv_to_array(file):
     path = os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)), 'data', file)
     user_file = open(path, 'r')
-
+    user_file = [raw.replace('\n', '') for raw in user_file]
     arr = []
     for line in user_file:
         inp_arr = csv_separate(line)
