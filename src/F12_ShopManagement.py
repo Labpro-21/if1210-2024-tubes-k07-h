@@ -1,5 +1,5 @@
 
-def shop_management(item_in_shop, monster_in_shop, item_shop, monster_shop):
+def shop_management(item_in_shop, monster_in_shop, item_shop, monster_shop, monster):
 
     #inisiasi kondisi
     quit = False
