@@ -18,8 +18,11 @@ def login(user, status):
                 if username == user[i][1] and password == user[i][2]:
                     print(f"Selamat datang, {user[i][3]} {user[i][1]}!")
                     print("Masukkan command 'help' untuk daftar command yang dapat kamu panggil.")
-                    cmd = input(">>>")
                     status = True
+                    role = user[i][3]
+                    user_id = user[i][0]
+                    username = user[i][1]
+                    owca = 0
                     break
                 elif i == len(user) -1:
                     print("Password salah!")
@@ -27,5 +30,5 @@ def login(user, status):
     else:
         print("Login gagal!")
         print("Anda telah login dengan username Purry, silahkan lakukan “LOGOUT” sebelum melakukan login kembali.")
-        
-    return ''
+    
+    return status, user_id, username, role, owca
