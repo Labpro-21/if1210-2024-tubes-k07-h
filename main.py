@@ -11,12 +11,16 @@ def main():
     from src.csv_to_array import csv_to_array
     from src.F01_Register import register
     from src.F02_Login import login
+    from src.F03_Logout import logout
     from src.F04_MenuHelp import help
     from src.F08_Battle import battle
     from src.F10_ShopCurrency import shop
+    from src.F11_Laboratory import laboratory
     from src.F12_ShopManagement import shop_management
     from src.F13_MonsterManagement import monster_management
     from src.F14_Load import load
+    from src.F16_Exit import keluar
+
 
     #INISIASI KONDISI
     status = False #artinya belum login
@@ -42,9 +46,13 @@ def main():
             username = user_info[2]
             role = user_info[3]
             owca = user_info[4]
-
         elif cmd == "LOGOUT":
-            logout()
+            user_info = logout(status)
+            status = user_info[0]
+            user_id = user_info[1]
+            username = user_info[2]
+            role = user_info[3]
+            owca = user_info[4]
         elif cmd == "HELP":
             help(status, role, username)
         elif cmd == "INVENTORY":
@@ -58,7 +66,7 @@ def main():
         elif cmd == "SHOPMANAGEMENT":
             shop_management(item_shop, monster_shop, monster)
         elif cmd == "LABORATORY":
-            laboratory()
+            laboratory(user_id, monster_inventory, monster, role, owca)
         elif cmd == "MONSTER":
             monster_management(monster)
         elif cmd == "LOAD":
@@ -66,6 +74,6 @@ def main():
         elif cmd == "SAVE":
             save()
         elif cmd == "EXIT":
-            exit()
+            keluar()
 
 main()
