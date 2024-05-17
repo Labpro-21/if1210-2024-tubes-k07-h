@@ -18,7 +18,7 @@ def tampilkan_monster(monster):
 def tambah_monster(monster):
     print("Memulai pembuatan monster baru")
 
-    new_type = input(">>> Masukkan Type / Nama : ")
+    new_type = input(">>> Masukkan Type / Nam ")
 
     # Memvalidasi apakah type monster sudah pernah digunakan sebelumnya atau belum
     existing_type = []
