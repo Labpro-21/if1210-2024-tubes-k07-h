@@ -25,7 +25,3 @@ class LCGRNG:
         
 
 lcg = LCGRNG()
-
-print(lcg.generate_number([0, 10]))
-print(lcg.generate_number([0, 10]))
-print(lcg.generate_number([0, 10]))
