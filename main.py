@@ -62,13 +62,14 @@ def main():
         elif cmd == "ARENA":
             arena()
         elif cmd == "SHOP":
-            shop(monster_shop, item_shop, monster, monster_inventory, item_inventory)
-        elif cmd == "SHOPMANAGEMENT":
-            shop_management(item_shop, monster_shop, monster)
+            if role == "Agent":
+                shop(role, monster_shop, item_shop, monster, monster_inventory, item_inventory, owca)
+            elif role == "Admin":
+                shop_management(role, item_shop, monster_shop, monster)
         elif cmd == "LABORATORY":
             laboratory(user_id, monster_inventory, monster, role, owca)
         elif cmd == "MONSTER":
-            monster_management(monster)
+            monster_management(username, role, monster)
         elif cmd == "LOAD":
             load()
         elif cmd == "SAVE":
