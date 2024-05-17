@@ -89,6 +89,8 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
         print(f"RAWRRR, Agent X mengeluarkan monster {ally_array[1]} !!!")
         printstats(ally_array,ally_level)
     
+    damage_dealt = 0
+    damage_received = 0
     potion_used = [0,0,0]
     turn = 1
     over = False
@@ -120,6 +122,7 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
             print(f"Attack {atk} + ({atk_rng})%, Reduced by {atk_def} ({enemy_array[3]}%), Attack result {atk_res}.")
             if enemy_array[4] <= 0:
                 enemy_array[4] = 0
+            damage_dealt += atk_res
             
             printstats(enemy_array,enemy_level)
             print("")
@@ -132,12 +135,13 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
                 user[int(user_id)][4] = int(user[int(user_id)][4]) + OWCA
                 over = True
                 break
+
             elif enemy_array[4] == 0 and isarena == True:
                 print(f"Selamat, Anda berhasil mengalahkan monster {enemy_array[1]}")
                 print("")
                 print(f"STAGE CLEARED! Anda akan mendapatkan {OC_arena} OC pada sesi ini!")
-                over = True
-                break
+                over = False
+                return [over, damage_dealt, damage_received]
 
             print(f"============ TURN {turn} ({enemy_array[1]}) ============")
             print("")
@@ -153,6 +157,7 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
             print(f"Attack {atk} + ({atk_rng})%, Reduced by {atk_def} ({ally_array[3]}%), Attack result {atk_res}.")
             if ally_array[4] <= 0:
                 ally_array[4] = 0
+            damage_received += atk_res
 
             printstats(ally_array,ally_level)
             print("")
@@ -160,7 +165,7 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
             if ally_array[4] == 0:
                 print(f"Yahhh, Anda dikalahkan monster {enemy_array[1]}. Jangan menyerah, coba lagi !!!")
                 over = True
-                return over
+                return [over, damage_dealt, damage_received]
             
             turn += 1
         elif command == 2:
@@ -243,12 +248,14 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
                     if ally_array[4] <= 0:
                         ally_array[4] = 0
 
+                    damage_received += atk_res
+
                     printstats(ally_array,ally_level)
                     print("")
 
                     if ally_array[4] == 0:
                         print(f"Yahhh, Anda dikalahkan monster {enemy_array[1]}. Jangan menyerah, coba lagi !!!")
-                        return over
+                        return [over, damage_dealt, damage_received]
 
                     turn += 1
                     break
@@ -257,8 +264,8 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
             if isarena == False:
                 over = True
                 print("Anda berhasil kabur dari BATTLE!")
-                return over
+                break
             elif isarena == True:
                 over = True
                 print("GAME OVER! Anda mengakhiri sesi latihan!")
-                return over
+                return [over, damage_dealt, damage_received]
