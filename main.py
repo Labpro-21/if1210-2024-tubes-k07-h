@@ -13,11 +13,10 @@ def main():
     from src.F02_Login import login
     from src.F03_Logout import logout
     from src.F04_MenuHelp import help
-    from src.F08_Battle import battle
+    from src.F07_Inventory import inventory
     from src.F10_ShopCurrency import shop
     from src.F11_Laboratory import laboratory
     from src.F12_ShopManagement import shop_management
-    from src.F13_MonsterManagement import monster_management
     from src.F14_Load import load
     from src.F16_Exit import keluar
 
@@ -56,7 +55,7 @@ def main():
         elif cmd == "HELP":
             help(status, role, username)
         elif cmd == "INVENTORY":
-            inventory()
+            inventory(user_id,user,monster_inventory,item_inventory,monster)
         elif cmd == "BATTLE":
             battle()
         elif cmd == "ARENA":
