@@ -1,6 +1,10 @@
 #########################F02#####################
 def login(user:str, status:bool):
     #masukkan inputan
+    print('''             
+ █░░ █▀█ █▀▀ █ █▄░█
+ █▄▄ █▄█ █▄█ █ █░▀█
+    ''')
 
     if status == True:
         print("Login gagal!")
