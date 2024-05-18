@@ -16,7 +16,24 @@ def shop_management(role, item_shop, monster_shop, monster):
         #inisiasi kondisi
         quit = False
         print()
-        print("Irasshaimase! Selamat datang kembali")
+        print("█ █▀█ █▀█ ▄▀█ █▀ █░█ ▄▀█ █ █▀▄▀█ ▄▀█ █▀ █▀▀")
+        print("█ █▀▄ █▀▄ █▀█ ▄█ █▀█ █▀█ █ █░▀░█ █▀█ ▄█ ██▄")
+        print()
+        print("█▀ █▀▀ █░░ ▄▀█ █▀▄▀█ ▄▀█ ▀█▀   █▀▄ ▄▀█ ▀█▀ ▄▀█ █▄░█ █▀▀   █▄▀ █▀▀ █▀▄▀█ █▄▄ ▄▀█ █░░ █")
+        print("▄█ ██▄ █▄▄ █▀█ █░▀░█ █▀█ ░█░   █▄▀ █▀█ ░█░ █▀█ █░▀█ █▄█   █░█ ██▄ █░▀░█ █▄█ █▀█ █▄▄ █")
+        print()
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⢊⠟⠉⠈⠑⣤⠊⠁⠈⠙⡝⠒⠤⡀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⠀⠀⢀⠔⠉⠀⠀⢈⠀⠀⢸⣷⢸⣾⡧⠀⠀⢸⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⠀⡠⠋⢀⠴⠒⠉⠙⢆⣀⢀⣭⢿⢬⣁⢀⡠⠋⠉⠒⠦⡀⠈⢦⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⢠⠃⡴⠉⠒⠂⠤⢄⣀⠀⠸⣯⢊⣸⠃⢀⣀⡤⠤⠒⠒⠈⣆⠈⡆⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⣬⠊⠁⠭⠤⠤⠤⠤⠤⡍⠀⠈⢹⠁⠀⠡⠤⠤⠤⠤⠤⠭⠈⠑⣼⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⡿⡀⠀⣀⣀⠀⠤⠤⠀⠂⠀⠀⠸⠀⠀⠐⠀⠤⠤⠤⠀⣀⠀⢀⢿⠀⠀⠀")
+        print("⡠⠒⠂⠐⠢⣇⢹⠂⢥⠤⠤⠐⠒⠒⠈⠉⠉⠉⠉⠉⠉⠀⠒⠂⠠⢤⡄⠒⡏⢸⠀⠀⠀")
+        print("⠃⠀⠀⠀⠀⢸⡼⡄⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠞⠀⢰⢀⠇⠀⠀⠀")
+        print("⢣⡀⠀⠀⣀⠎⠛⣿⡀⠀⠙⣄⠀⡠⠤⠤⠤⣀⠤⠤⠤⢄⠀⣠⠊⠀⢀⢆⠎⠀⠀⠀⠀")
+        print("⠀⠈⠉⠙⣄⠀⠀⠈⠻⣄⠀⠈⠙⢤⡀⠀⠀⠀⠀⠀⢀⡠⠟⠁⠀⣠⣮⠃⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠈⠳⡀⠀⠀⢸⡓⢤⠤⣄⣈⣉⣐⣒⣂⣉⣁⣀⡠⠤⠴⢻⡅⠀⠀⠀⠀⠀⠀")
         print()
         action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
         while not quit: #selama user belum memilih keluar, maka akan melooping terus
@@ -44,7 +61,7 @@ def shop_management(role, item_shop, monster_shop, monster):
                     action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
                     print()
                 else: #validasi masukan
-                    print("Masukan tidak valid, periksa kembali masukan Anda!")
+                    print("Masukan tidak valid, periksa kembali masukan Anda! (╥﹏╥)")
 
             ########################TAMBAH###############################
             #menambahkan item atau monster ke dalam shop
@@ -59,7 +76,7 @@ def shop_management(role, item_shop, monster_shop, monster):
                     harga_monster = input(">>>Masukkan harga: ")
                     for i in range(1,len(monster)):
                         if id_monster == monster[i][0]:
-                            print(f"{monster[i][1]} berhasil ditambahkan ke dalam shop!")
+                            print(f"{monster[i][1]} berhasil ditambahkan ke dalam shop! ٩(^ᗜ^ )و '- ")
                             monster_shop.append([id_monster, stok_awal_monster, harga_monster])
                             # append monster yang dipilih ke monster in shop
                             monster_in_shop.append(monster[i])
@@ -77,7 +94,7 @@ def shop_management(role, item_shop, monster_shop, monster):
                     harga_potion = int(input(">>>Masukkan harga: "))
                     for i in range(len(item_shop)):
                         if id_potion == str(i):
-                            print(f"{item_shop[i][0]} berhasil ditambahkan ke dalam shop!")
+                            print(f"{item_shop[i][0]} berhasil ditambahkan ke dalam shop! ٩(^ᗜ^ )و '- ")
                             item_shop[i][1] = stok_awal_potion
                             item_shop[i][2] = harga_potion
                             #append potion ke item_in_shop
@@ -86,7 +103,7 @@ def shop_management(role, item_shop, monster_shop, monster):
                     action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
                     print()
                 else:
-                    print(">>>Masukan tidak valid, periksa kembali masukan Anda!")
+                    print(">>>Masukan tidak valid, periksa kembali masukan Anda! (╥﹏╥)")
 
             ########################UBAH###############################
             #mengubah stock dan harga dari monster atau item yang dijual di shop
@@ -102,7 +119,7 @@ def shop_management(role, item_shop, monster_shop, monster):
                     harga_monster_baru = input(">>>Masukkan harga baru: ")
                     for i in range(1,len(monster)):
                         if id_monster == str(i):
-                            print(f"{monster_in_shop[i][1]} berhasil diubah dengan stok baru sejumlah {stok_baru_monster} dan dengan harga baru {harga_monster_baru}!")
+                            print(f"{monster_in_shop[i][1]} berhasil diubah dengan stok baru sejumlah {stok_baru_monster} dan dengan harga baru {harga_monster_baru}! ٩(^ᗜ^ )و '- ")
                             monster_shop[i][1] = stok_baru_monster
                             monster_shop[i][2] = harga_monster_baru
                     print()
@@ -122,14 +139,14 @@ def shop_management(role, item_shop, monster_shop, monster):
                     harga_potion_baru = input(">>>Masukkan harga baru: ")
                     for i in range(1,8):
                         if id_potion == str(i):
-                            print(f"{item_shop[i][0]} berhasil diubah dengan stok baru sejumlah {stok_baru_potion} dan dengan harga baru {harga_potion_baru}!")
+                            print(f"{item_shop[i][0]} berhasil diubah dengan stok baru sejumlah {stok_baru_potion} dan dengan harga baru {harga_potion_baru}! ٩(^ᗜ^ )و '- ")
                             item_shop[i][1] = stok_baru_potion
                             item_shop[i][2] = harga_potion_baru
                     print()
                     action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
                     print()
                 else:
-                    print("Masukan tidak valid, periksa kembali masukan Anda!")
+                    print("Masukan tidak valid, periksa kembali masukan Anda! (╥﹏╥)")
 
             ########################HAPUS###############################
             #menghapus monster atau item yang ada di shop
@@ -143,7 +160,7 @@ def shop_management(role, item_shop, monster_shop, monster):
                     id_monster = input(">>>Masukkan id monster: ")
                     validasi = input(f">>>Apakah ingin menghapus {monster_in_shop[int(id_monster)][1]} dari shop (y/n)?")
                     if validasi == 'y':
-                        print(f"{monster_in_shop[int(id_monster)][1]} telah berhasil dihapus dari shop!")
+                        print(f"{monster_in_shop[int(id_monster)][1]} telah berhasil dihapus dari shop! ദ്ദി（• ˕ •マ.ᐟ")
                         del monster_in_shop[int(id_monster)]#hapus dari matrixnya
                     print()
                     action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
@@ -155,22 +172,22 @@ def shop_management(role, item_shop, monster_shop, monster):
                     id_potion = input(">>>Masukkan id potion: ")
                     validasi = input(f">>>Apakah anda yakin ingin menghapus {item_in_shop[int(id_potion)][0]} dari shop (y/n)?")
                     if validasi == 'y':
-                        print(f"{item_in_shop[int(id_potion)][0]} telah berhasil dihapus dari shop!")
+                        print(f"{item_in_shop[int(id_potion)][0]} telah berhasil dihapus dari shop! ദ്ദി（• ˕ •マ.ᐟ")
                         del item_in_shop[int(id_potion)]#hapus dari matrixnya
                     print()
                     action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
                     print()
                 else:
-                    print("Masukan tidak valid, periksa kembali masukan Anda!")
+                    print("Masukan tidak valid, periksa kembali masukan Anda! (╥﹏╥) ")
 
             ########################KELUAR###############################
             #ketika sudah tidak ingin membeli apapun, maka akan keluar dari program shop
             elif action == 'keluar':
                 quit = True
-                print(f"Dadah Mr.Yanto, sampai jumpa lagi!")
+                print(f"Dadah Mr.Yanto, sampai jumpa lagi! ヾ( ˃ᴗ˂ )◞ ")
 
             else:
-                print("Masukan tidak valid, periksa kembali masukan Anda!")
+                print("Masukan tidak valid, periksa kembali masukan Anda! (╥﹏╥)")
                 print()
                 action = input(">>>Pilih aksi (lihat/tambah/ubah/hapus/keluar):")
                 print()
