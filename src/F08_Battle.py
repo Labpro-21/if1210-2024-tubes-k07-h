@@ -203,7 +203,6 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
                             for i in range(len(item_inventory)):
                                 if item_inventory[i][0] == user_id and item_inventory[i][1] == "Strength Potion":
                                     item_inventory[i][2] = int(item_inventory[i][2]) -1 
-                                    print(item_inventory[i][2])
 
                         else:
                             print(f"Kamu mencoba memberikan ramuan ini kepada {ally_array[1]}, namun dia menolaknya seolah-olah dia memahami ramuan tersebut sudah tidak bermanfaat lagi.")
