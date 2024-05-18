@@ -1,12 +1,42 @@
 def laboratory(user_id, monster_inventory, monster, role, owca):
     if role == "Agent":
-        print("Selamat datang di Lab Dokter Asep !!!")
-        print("============ MONSTER LIST ============")
+        print("█▀ █▀▀ █░░ ▄▀█ █▀▄▀█ ▄▀█ ▀█▀   █▀▄ ▄▀█ ▀█▀ ▄▀█ █▄░█ █▀▀")
+        print("▄█ ██▄ █▄▄ █▀█ █░▀░█ █▀█ ░█░   █▄▀ █▀█ ░█░ █▀█ █░▀█ █▄█")
+        print("")
+        print("█▀▄ █   █░░ ▄▀█ █▄▄   █▀▄ █▀█ █▄▀ ▀█▀ █▀▀ █▀█   ▄▀█ █▀ █▀▀ █▀█ █ █")
+        print("█▄▀ █   █▄▄ █▀█ █▄█   █▄▀ █▄█ █░█ ░█░ ██▄ █▀▄   █▀█ ▄█ ██▄ █▀▀ ▄ ▄")
+        print("")
+        print("")
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠄⣀⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣴⣞⣱⣣⠞⣹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⢠⣶⠛⠉⠀⠉⠀⠉⠙⠻⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⢀⡴⠟⠢⣄⡠⡴⠒⠤⡀⠀⠀⠘⢿⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⣟⣾⡟⠀⣾⣿⡶⠀⡼⠃⠀⠀⠀⠈⣷⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⣣⣁⣀⡾⢇⣁⡠⠞⠁⠀⠀⠀⠀⠀⣿⠄⣸⣇⠀⠀⠀⠀⠀⢰⡄⠀⠀⠀⠀⠀")
+        print("⠀⠀⢠⡏⠸⠿⣾⣫⡯⠿⣵⡀⠀⠀⠀⠀⠀⢿⣷⠟⠁⠀⠀⠀⠀⢰⡿⢷⡄⠀⠀⠀⠀")
+        print("⠀⠀⢸⣇⠀⠀⠀⠀⠉⠃⠀⠀⠀⠀⠀⠀⠀⣹⣧⣀⡀⠀⠀⠀⠀⢸⡏⢸⣾⠀⠀⠀⠀")
+        print("⠀⠀⠈⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⣽⡅⢀⡿⠀⠀⠀⠀⢺⠓⠀⣿⠀⠀⠀⠀")
+        print("⠀⠀⠀⣸⣗⡂⠀⠀⠀⠀⠀⠀⠀⣸⠁⠀⠀⢹⢇⡞⠁⠀⠀⠀⣠⡾⠀⠀⣻⡀⠀⠀⠀")
+        print("⠀⠀⢀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⢾⣁⠤⣄⠀⠀⡴⡽⠁⠀⢰⢻⠃⠀⠀⠀")
+        print("⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⣹⠐⠀⠀⢻⢻⣀⣸⣀⣴⡟⠀⠀⠀⣸⣿⠀⠀⠀⠀")
+        print("⠀⠀⢰⣿⡇⠀⠀⠀⢀⣄⠀⠀⢠⡿⣄⢰⡀⠿⡀⠙⠛⠛⠉⠀⠀⢀⣴⣿⠃⠀⠀⠀⠀")
+        print("⠀⠀⠀⢿⣷⡀⠀⠀⠒⠛⠋⠀⠸⢷⡹⣞⣷⣦⠟⠀⠀⠀⠀⣀⣴⣿⠛⠁⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠈⠻⡷⠶⠄⠀⠦⣴⡴⠿⠃⠉⠛⣩⣤⣦⣶⣶⣶⡿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀")
+        print("⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⣿⠃⠀⠀⠀⣸⠏⠀⠉⠁⠉⠁⠀⠀             ")
+        print("⠀⡤⠒⠉⠉⠉⣽⠋⠉⠉⠋⠀⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀ ")
+        print("⣸⠧⠤⠤⠤⠤⢿⠦⠦⠴⠶⠶⠶⠶⡶⢾⠶⠂⠀⠀")
+        print()
+        print()
+        print("█▀▄▀█ █▀█ █▄░█ █▀ ▀█▀ █▀▀ █▀█   █░░ █ █▀ ▀█▀")
+        print("█░▀░█ █▄█ █░▀█ ▄█ ░█░ ██▄ █▀▄   █▄▄ █ ▄█ ░█░")
+
         for i in range (1, len(monster_inventory)):
             if monster_inventory[i][0] == user_id:
                 print(f"{monster[i][0]}. {monster[i][1]} (Level: {monster_inventory[i][2]})")
 
-        print("============UPGRADEPRICE============")
+        print("█░█ █▀█ █▀▀ █▀█ ▄▀█ █▀▄ █▀▀   █▀█ █▀█ █ █▀▀ █▀▀")
+        print("█▄█ █▀▀ █▄█ █▀▄ █▀█ █▄▀ ██▄   █▀▀ █▀▄ █ █▄▄ ██▄")
+        print()
         print("1. Level 1 -> Level 2: 200 OC")
         print("2. Level 2 -> Level 3: 300 OC")
         print("3. Level 3 -> Level 4: 400 OC")
@@ -24,7 +54,8 @@ def laboratory(user_id, monster_inventory, monster, role, owca):
             else:
                 print("Kamu tidak melakukan upgrade apa pun.")
         else: #jika level sudah 5
-            print(" Maaf,monster yang Anda pilih sudah memiliki level maksimum")
+            print(" Maaf, monster yang Anda pilih sudah memiliki level maksimum")
+            print("")
 
     else:
-        print("Anda bukan seorang Agent, Anda tida dapat mengakses Laboratory")
+        print("Anda bukan seorang Agent, Anda tidak dapat mengakses Laboratory")
