@@ -40,14 +40,14 @@ def register(status: bool, user:str, monster:str, monster_inventory:str, item_in
             for i in range (1, len(monster)):
                 print(f"{monster[i][0]}. {monster[i][1]}")
             monster_awal = input("Monster pilihanmu: ")
-            if int(monster_awal) > len(monster) or int(monster_awal) < 1:
-                print("==================================")
-                print("Tidak ada pilihan monster tersebut. Silahkan pilih monster yang lain.")
-                print()
-            else:
+            if ord('1') <= ord(monster_awal) <= ord(str(len(monster))):
                 print("==================================")
                 print(f"Selamat datang Agent {username}. Mari kita mengalahkan Dr. Asep Spakbor dengan {monster[int(monster_awal)][1]}!")
                 user.append([len(user), username, password, 'Agent', '0'])
                 monster_inventory.append([len(user), monster_awal, '1'])
                 item_inventory.append([len(item_inventory), '-', '-'])
                 break
+            else:
+                print("==================================")
+                print("Tidak ada pilihan monster tersebut. Silahkan pilih monster yang lain.")
+                print()
