@@ -19,6 +19,7 @@ def main():
     from src.F10_ShopCurrency import shop
     from src.F11_Laboratory import laboratory
     from src.F12_ShopManagement import shop_management
+    from src.F13_MonsterManagement import monster_management
     from src.F14_Load import load
     from src.F16_Exit import keluar
 
@@ -37,7 +38,7 @@ def main():
     monster_shop = csv_to_array('monster_shop.csv')
 
     while exit == False:
-        cmd = input(">>> ")
+        cmd = str.upper(input(">>> "))
         if cmd == "REGISTER":
             register(status, user, monster, monster_inventory, item_inventory)
         elif cmd == "LOGIN":
@@ -77,5 +78,7 @@ def main():
             save()
         elif cmd == "EXIT":
             keluar()
+        else:
+            print("Maaf, fitur tersebut tidak tersedia. Mohon pilih fitur yang tersedia.")
 
 main()
