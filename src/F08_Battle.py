@@ -211,12 +211,12 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
                         if potion_used[potion_pick-1] == 0:
                             ally_array[3] = math.floor(ally_array[3] + ally_array[3]*5/100)
                             potion_used[potion_pick-1] += 1
+                            print("Potion Berhasil Digunakan")
                             for i in range(len(item_inventory)):
                                 if item_inventory[i][0] == user_id and item_inventory[i][1] == "Resilience Potion":
                                     item_inventory[i][2] = int(item_inventory[i][2]) -1 
                         else:
                             print(f"Kamu mencoba memberikan ramuan ini kepada {ally_array[1]}, namun dia menolaknya seolah-olah dia memahami ramuan tersebut sudah tidak bermanfaat lagi.")
-                            print("Potion Berhasil Digunakan")
                             break
                     elif potion_matrix[potion_pick-1][1] == "Healing Potion":
                         if potion_used[potion_pick-1] == 0:
@@ -224,12 +224,12 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
                             if ally_array[4] >= ally_maxhp:
                                 ally_array[4] = ally_maxhp
                             potion_used[potion_pick-1] += 1
+                            print("Potion Berhasil Digunakan")
                             for i in range(len(item_inventory)):
                                 if item_inventory[i][0] == user_id and item_inventory[i][1] == "Healing Potion":
                                     item_inventory[i][2] = int(item_inventory[i][2]) -1 
                         else:
                             print(f"Kamu mencoba memberikan ramuan ini kepada {ally_array[1]}, namun dia menolaknya seolah-olah dia memahami ramuan tersebut sudah tidak bermanfaat lagi.")
-                            print("Potion Berhasil Digunakan")
                             break
 
                     print(f"============ TURN {turn} ({enemy_array[1]}) ============")
