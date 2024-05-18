@@ -1,22 +1,35 @@
 #########################F02#####################
-def login(user, status):
+def login(user:str, status:bool):
     #masukkan inputan
 
-    username = input("Username: ")
-    password = input("Password: ")
+    if status == True:
+        print("Login gagal!")
+        print("Anda telah login dengan username Purry, silahkan lakukan “LOGOUT” sebelum melakukan login kembali.")
 
     existing_user = []
     for i in range (len(user)):
         existing_user.append(user[i][1])
 
-    if status == False: #belum login
+    while status == False: #belum login
+        print("========== LOGIN ==========")
+        username = input("Username: ")
+        password = input("Password: ")
         #mengecek inputan user
         if username not in existing_user:
+            print()
             print("Username tidak terdaftar!")
+            status = False
+            role = 'NaN'
+            user_id = 'NaN'
+            username = 'NaN'
+            owca = 'NaN'
+            
         else:
             for i in range(1, len(user)):
                 if username == user[i][1] and password == user[i][2]:
+                    print()
                     print(f"Selamat datang, {user[i][3]} {user[i][1]}!")
+                    print()
                     print("Masukkan command 'help' untuk daftar command yang dapat kamu panggil.")
                     status = True
                     role = user[i][3]
@@ -24,11 +37,14 @@ def login(user, status):
                     username = user[i][1]
                     owca = 0
                     break
-                elif i == len(user) -1:
+                elif i == len(user) -1: #artinya sudah dicek sampai terakhir
+                    print()
                     print("Password salah!")
+                    status = False
+                    role = 'NaN'
+                    user_id = 'NaN'
+                    username = 'NaN'
+                    owca = 'NaN'
                     break
-    else:
-        print("Login gagal!")
-        print("Anda telah login dengan username Purry, silahkan lakukan “LOGOUT” sebelum melakukan login kembali.")
     
     return status, user_id, username, role, owca
