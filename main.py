@@ -14,6 +14,8 @@ def main():
     from src.F03_Logout import logout
     from src.F04_MenuHelp import help
     from src.F07_Inventory import inventory
+    from src.F08_Battle import battle
+    from src.F09_Arena import arena
     from src.F10_ShopCurrency import shop
     from src.F11_Laboratory import laboratory
     from src.F12_ShopManagement import shop_management
@@ -57,9 +59,9 @@ def main():
         elif cmd == "INVENTORY":
             inventory(user_id,user,monster_inventory,item_inventory,monster)
         elif cmd == "BATTLE":
-            battle()
+            battle(0,user_id,False,0,[],0,monster,monster_inventory,item_inventory,user)
         elif cmd == "ARENA":
-            arena()
+            arena(user_id,monster_inventory,monster,user,item_inventory)
         elif cmd == "SHOP":
             if role == "Agent":
                 shop(role, monster_shop, item_shop, monster, monster_inventory, item_inventory, owca)
