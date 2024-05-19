@@ -40,7 +40,8 @@ def login(user:str, status:bool):
                     user_id = user[i][0]
                     username = user[i][1]
                     owca = 0
-                    break
+                    return status, user_id, username, role, owca
+                    
                 elif i == len(user) -1: #artinya sudah dicek sampai terakhir
                     print()
                     print("Password salah!")
@@ -49,6 +50,6 @@ def login(user:str, status:bool):
                     user_id = 'NaN'
                     username = 'NaN'
                     owca = 'NaN'
-                    break
+                    
+                    
     
-    return status, user_id, username, role, owca
