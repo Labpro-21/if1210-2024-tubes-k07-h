@@ -1,5 +1,9 @@
 
-def help(status, role, username):
+def help(status:bool, role:str, username:str):
+    print('''   
+ █░█ █▀▀ █░░ █▀█
+ █▀█ ██▄ █▄▄ █▀▀
+          ''')
     print ('========== HELP ==========')
     print ()
     if status == True: #kalau sudah login
@@ -39,4 +43,3 @@ def help(status, role, username):
         print ("Footnote:")
         print ("    1. Untuk menggunakan aplikasi, silahkan masukkan nama fungsi yang terdaftar")
         print ("    2. Jangan lupa untuk memasukkan input yang valid")
-        
