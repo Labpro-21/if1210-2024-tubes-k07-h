@@ -1,4 +1,4 @@
-def arena (user_id,monster_inventory,monster,user,item_inventory):
+def arena (user_id,monster_inventory,monster,username,owca,item_inventory):
     from src.F08_Battle import printstats,battle
     import math
     print("Selamat datang di Arena!!")
@@ -35,7 +35,7 @@ def arena (user_id,monster_inventory,monster,user,item_inventory):
     for i in range(2,len(ally_array)):
         ally_array[i] = math.floor(int(ally_array[i])+int(ally_array[i])*(int(ally_level)-1)*10/100)    
 
-    print(f"RAWRRR, Agent {user[int(user_id)][1]} mengeluarkan monster {ally_array[1]}")
+    print(f"RAWRRR, Agent {username} mengeluarkan monster {ally_array[1]}")
     print()
     printstats(ally_array,ally_level)
     print("")
@@ -49,9 +49,9 @@ def arena (user_id,monster_inventory,monster,user,item_inventory):
         print("")
         print(f"============= STAGE {i+1} =============")
 
-        reward = [20, 50, 90, 140, 200]
+        reward = [10, 15, 25, 40, 60]
 
-        temp = battle(i+1,user_id,True,reward[i],ally_array,ally_level,monster,monster_inventory,item_inventory,user)
+        temp = battle(i+1,user_id,isarena,total_reward+reward[i],ally_array,ally_level,monster,monster_inventory,item_inventory,owca)
 
         if temp[0] == True:
             print("")
@@ -61,7 +61,7 @@ def arena (user_id,monster_inventory,monster,user,item_inventory):
 
         
 
-        user[int(user_id)][3] = int(user[int(user_id)][4]) + reward[i]
+        owca = int(owca) + reward[i]
         total_reward += reward[i]
         total_stage += 1
         damage_dealt += temp[1]
@@ -74,6 +74,8 @@ def arena (user_id,monster_inventory,monster,user,item_inventory):
     print(f"Jumlah stage        : {total_stage}")
     print(f"Damage diberikan    : {damage_dealt}")
     print(f"Damage diterima     : {damage_received}")
+
+    return owca
 
 
     

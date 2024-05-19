@@ -1,6 +1,6 @@
 import math
 
-def printstats(monster_array, monster_level):
+def printstats(monster_array:str, monster_level:int):
     print(f"Name      : {monster_array[1]}")
     print(f"ATK Power : {monster_array[2]}")
     print(f"DEF Power : {monster_array[3]}")
@@ -8,7 +8,7 @@ def printstats(monster_array, monster_level):
     print(f"Level     : {monster_level}")
     
 
-def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,monster_inventory,item_inventory,user):
+def battle(enemy_level:int ,user_id:int ,isarena:bool ,OC_arena:int ,ally_array:str ,ally_level:int ,monster: str,monster_inventory:str ,item_inventory:str,owca:int):
     from src.F00_RNG import LCGRNG
     #MONSTER MUNCUL
     lcg = LCGRNG()
@@ -130,11 +130,10 @@ def battle(enemy_level,user_id,isarena,OC_arena,ally_array,ally_level,monster,mo
             if enemy_array[4] == 0 and isarena == False:
                 print(f"Selamat, Anda berhasil mengalahkan monster {enemy_array[1]}")
                 print("")
-                OWCA = lcg.generate_number([15,30])
-                print(f"Total OC yang diperoleh : {OWCA}")
-                user[int(user_id)][4] = int(user[int(user_id)][4]) + OWCA
-                over = True
-                break
+                getowca = lcg.generate_number([15,30])
+                print(f"Total OC yang diperoleh : {getowca}")
+                owca = owca + getowca
+                return owca
 
             elif enemy_array[4] == 0 and isarena == True:
                 print(f"Selamat, Anda berhasil mengalahkan monster {enemy_array[1]}")

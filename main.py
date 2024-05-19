@@ -57,11 +57,11 @@ def main(folder):
         elif cmd == "HELP":
             help(status, role, username)
         elif cmd == "INVENTORY":
-            inventory(user_id,user,monster_inventory,item_inventory,monster)
+            inventory(user_id,owca,monster_inventory,item_inventory,monster)
         elif cmd == "BATTLE":
-            battle(0,user_id,False,0,[],0,monster,monster_inventory,item_inventory,user)
+            owca = battle(0,user_id,False,0,[],0,monster,monster_inventory,item_inventory,owca)
         elif cmd == "ARENA":
-            arena(user_id,monster_inventory,monster,user,item_inventory)
+            owca = arena(user_id,monster_inventory,monster,username,owca,item_inventory)
         elif cmd == "SHOP":
             if role == "Agent":
                 shop(role, monster_shop, item_shop, monster, monster_inventory, item_inventory, owca)

@@ -1,11 +1,9 @@
 # program F07 - Inventory
 
-def inventory (user_id,user,monster_inventory,item_inventory,monster):
+def inventory (user_id:str ,owca:int ,monster_inventory:str ,item_inventory:str ,monster:str):
     import math
     # Print 2 baris pertama inventory list (User ID dan OWCA)
     user_id = int(user_id)
-    owca = 0
-    owca = user[user_id][4]
     print(f"INVENTORY LIST (User ID: {user_id})")
     print(f"Jumlah O.W.C.A. Coin-mu sekarang {owca}")
 
