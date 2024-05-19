@@ -34,6 +34,8 @@ def inventory (user_id,user,monster_inventory,item_inventory,monster):
             print(f"{potion_count+monster_count+1}. Potion      (Type: {item_inventory[i][1]}, Qty: {item_inventory[i][2]})")
             potion_count+=1
             inventory_matrix.append(item_inventory[i])
+
+    print('Ketik "KELUAR" untuk keluar dari menu inventory')
     
     # bagian input pada inventory (pengguna mengetik command KELUAR untuk berhenti)
     keluar_inventory = False # variabel untuk menghentikan fungsi saat pengguna mengetik KELUAR
@@ -43,6 +45,7 @@ def inventory (user_id,user,monster_inventory,item_inventory,monster):
         id_detail = str(input(">>> ")) # input id item yang diiginkan detailnya
 
         if id_detail == "KELUAR": # keluar dari fungsi bila input KELUAR
+            print("Berhasil keluar dari menu inventory")
             keluar_inventory == True
             break
 

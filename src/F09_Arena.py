@@ -26,7 +26,9 @@ def arena (user_id,monster_inventory,monster,user,item_inventory):
             print("Pilihan nomor tidak tersedia!")
         else: break
 
-    ally_array = monster_stats[monster_pick-1]
+    ally_array = []
+    for i in range(5):
+        ally_array.append(monster_stats[monster_pick-1][i])
     ally_level = monster_list[monster_pick-1][2]
     ally_restore = ally_array[4]
 
