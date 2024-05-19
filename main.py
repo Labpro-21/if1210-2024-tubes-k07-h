@@ -57,20 +57,44 @@ def main(folder):
         elif cmd == "HELP":
             help(status, role, username)
         elif cmd == "INVENTORY":
-            inventory(user_id,owca,monster_inventory,item_inventory,monster)
+            if role == "Agent":
+                inventory(user_id,owca,monster_inventory,item_inventory,monster)
+            elif role == "Admin":
+                print("Anda tidak dapat mengakses inventory karena Anda bukan seorang Agent.")
+            else:
+                print("Anda tidak dapat mengakses inventory karena belum login. Silahkan login terlebih dahulu.")
         elif cmd == "BATTLE":
-            owca = battle(0,user_id,False,0,[],0,monster,monster_inventory,item_inventory,owca)
+            if role == "Agent":
+                owca = battle(0,user_id,False,0,[],0,monster,monster_inventory,item_inventory,owca)
+            elif role == "Admin":
+                print("Anda tidak dapat mengakses battle karena Anda bukan seorang Agent.")
+            else:
+                print("Anda tidak dapat mengakses battle karena belum login. Silahkan login terlebih dahulu.")
         elif cmd == "ARENA":
-            owca = arena(user_id,monster_inventory,monster,username,owca,item_inventory)
+            if role == "Agent":
+                owca = arena(user_id,monster_inventory,monster,username,owca,item_inventory)
+            elif role == "Admin":
+                print("Anda tidak dapat mengakses arena karena Anda bukan seorang Agent.")
+            else:
+                print("Anda tidak dapat mengakses arena karena belum login. Silahkan login terlebih dahulu.")
         elif cmd == "SHOP":
             if role == "Agent":
-                shop(role, monster_shop, item_shop, monster, monster_inventory, item_inventory, owca)
+                shop_info = shop(role, monster_shop, item_shop, monster, monster_inventory, item_inventory, owca)
+                owca = shop_info[0]
+                monster_shop = shop_info[1]
+                item_shop = shop_info[2]
+                monster_inventory = shop_info[3]
+                item_inventory = shop_info[4]
             elif role == "Admin":
                 shop_management(role, item_shop, monster_shop, monster)
+            else:
+                print("Anda tidak dapat mengakses shop karena belum login. Silahkan login terlebih dahulu.")
         elif cmd == "LABORATORY":
-            laboratory(user_id, monster_inventory, monster, role, owca)
+            lab_info = laboratory(user_id, monster_inventory, monster, role, owca)
+            monster_inventory = lab_info[0]
+            owca = lab_info[1]
         elif cmd == "MONSTER":
-            monster_management(username, role, monster)
+            monster = monster_management(username, role, monster)
         elif cmd == "SAVE":
             saving_to_folder(user, monster, monster_inventory, item_inventory, monster_shop, item_shop)
         elif cmd == "EXIT":
@@ -80,6 +104,7 @@ def main(folder):
 
 import argparse
 import os
+import time
 
 def check(folder):
     data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
@@ -96,8 +121,8 @@ def load():
     args = parser.parse_args()
 
     folder = args.folder
-    print()
-    print("Selamat datang di OWCA")
+    print("Loading...")
+    time.sleep(3)
     main(folder)
 
 load()
