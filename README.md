@@ -2,7 +2,7 @@
 > Tugas Besar - IF1210 Dasar Pemrograman 2024
 
 # About
-Program O.W.C.A. merupakan sebuah game tentang Agent yang melawan monster-monster jahat demi melindungi Kota Danville. Game ini dapat dimanikan oleh role Agent dan Admin. Tugas dari Agent ini adalah membantu Purry untuk mengalahkan musuh. Sedangkan tugas dari Admin adalah menyediakan kebutuhan yang diperlukan oleh Agent dalam mengalahkan musuh dengan cara menjual monster dan potion. 
+Program O.W.C.A. merupakan sebuah game tentang Agent yang melawan monster-monster jahat demi melindungi Kota Danville. Game ini dapat dimainkan oleh role Agent dan Admin. Tugas dari Agent adalah membantu Purry untuk mengalahkan musuh. Sedangkan tugas dari Admin adalah menyediakan kebutuhan yang diperlukan oleh Agent dalam mengalahkan musuh dengan cara menjual monster dan potion. Seorang Agent dapat melawan monster dan memperoleh coin-OC apabila memenangkan pertarungan. Coin tersebut nantinya dapat digunakan untuk membeli monster dan potion. Agent juga dapat melakukan upgrade level monster untuk meningkatkan skill bertarungnya.
 
 # Contributors
 Diyah Susan Nugrahani (19623047)
