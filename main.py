@@ -1,4 +1,4 @@
-def main():
+def main(folder):
     print('''
 
  ██████╗  █████╗ ███╗   ███╗███████╗    ███████╗████████╗ █████╗ ██████╗ ████████╗
@@ -20,9 +20,7 @@ def main():
     from src.F11_Laboratory import laboratory
     from src.F12_ShopManagement import shop_management
     from src.F13_MonsterManagement import monster_management
-    from src.F14_Load import load
     from src.F16_Exit import keluar
-
 
     #INISIASI KONDISI
     status = False #artinya belum login
@@ -30,12 +28,12 @@ def main():
     exit = False
     username = 'NaN'
 
-    monster = csv_to_array('monster.csv')
-    user = csv_to_array('user.csv')
-    item_inventory = csv_to_array('item_inventory.csv')
-    monster_inventory = csv_to_array('monster_inventory.csv')
-    item_shop = csv_to_array('item_shop.csv')
-    monster_shop = csv_to_array('monster_shop.csv')
+    monster = csv_to_array(folder, 'monster.csv')
+    user = csv_to_array(folder, 'user.csv')
+    item_inventory = csv_to_array(folder, 'item_inventory.csv')
+    monster_inventory = csv_to_array(folder, 'monster_inventory.csv')
+    item_shop = csv_to_array(folder, 'item_shop.csv')
+    monster_shop = csv_to_array(folder, 'monster_shop.csv')
 
     while exit == False:
         cmd = str.upper(input(">>> "))
@@ -72,8 +70,6 @@ def main():
             laboratory(user_id, monster_inventory, monster, role, owca)
         elif cmd == "MONSTER":
             monster_management(username, role, monster)
-        elif cmd == "LOAD":
-            load()
         elif cmd == "SAVE":
             save()
         elif cmd == "EXIT":
@@ -81,4 +77,26 @@ def main():
         else:
             print("Maaf, fitur tersebut tidak tersedia. Mohon pilih fitur yang tersedia.")
 
-main()
+import argparse
+import os
+
+def check(folder):
+    data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+    isExist = os.path.exists(os.path.join(data_path, folder))
+    if isExist == False:
+        raise argparse.ArgumentTypeError(f'Folder {folder} tidak ditemukan')
+    return folder
+
+def load():
+    parser = argparse.ArgumentParser(description="Mengakses folder data")
+
+    parser.add_argument('folder', type=check)
+
+    args = parser.parse_args()
+
+    folder = args.folder
+    print()
+    print("Selamat datang di OWCA")
+    main(folder)
+
+load()
