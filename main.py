@@ -86,7 +86,9 @@ def main(folder):
                 monster_inventory = shop_info[3]
                 item_inventory = shop_info[4]
             elif role == "Admin":
-                shop_management(role, item_shop, monster_shop, monster)
+                shop_info = shop_management(role, item_shop, monster_shop, monster)
+                item_shop = shop_info[0]
+                monster_shop = shop_info[1]
             else:
                 print("Anda tidak dapat mengakses shop karena belum login. Silahkan login terlebih dahulu.")
         elif cmd == "LABORATORY":
