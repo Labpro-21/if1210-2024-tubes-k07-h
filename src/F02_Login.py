@@ -9,7 +9,7 @@ def login(user:str, status:bool):
     if status == True:
         print("Login gagal!")
         print("Anda telah login dengan username Purry, silahkan lakukan “LOGOUT” sebelum melakukan login kembali.")
-
+        return status, user[0], user[1], user[3], user[4]
     existing_user = []
     for i in range (len(user)):
         existing_user.append(user[i][1])
