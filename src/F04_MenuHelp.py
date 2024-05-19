@@ -17,6 +17,8 @@ def help(status:bool, role:str, username:str):
             print ("    4. Arena\t\t: Arena berlatih untuk meningkatkan kemampuan agen dan para monster.")
             print ("    5. Shop\t\t: Tempat agen membeli monster dan potion")
             print ("    6. Laboratoty\t: Melakukan upgrade monster yang dimiliki.")
+            print ("    7. Save \t\t: Menyimpan perubahan selama bermain")
+            print ("    8. Exit \t\t: Keluar dari permainan.")
 
             print ()
             print ("Footnote:")
@@ -29,6 +31,8 @@ def help(status:bool, role:str, username:str):
             print ("    1. Logout\t: Keluar dari akun yang sedang digunakan")
             print ("    2. Shop\t: Melakukan manajemen pada SHOP sebagai tempat jual beli peralatan Agent")
             print ("    3. Monster\t: Mengatur monster dalam database.")
+            print ("    4. Save \t\t: Menyimpan perubahan selama bermain")
+            print ("    5. Exit \t\t: Keluar dari permainan.")
             print ()
             print ("Footnote:")
             print ("    1. Untuk menggunakan aplikasi, silahkan masukkan nama fungsi yang terdaftar")
