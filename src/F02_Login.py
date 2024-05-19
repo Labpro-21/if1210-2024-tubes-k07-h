@@ -39,7 +39,7 @@ def login(user:str, status:bool):
                     role = user[i][3]
                     user_id = user[i][0]
                     username = user[i][1]
-                    owca = 0
+                    owca = int(user[i][4])
                     return status, user_id, username, role, owca
                     
                 elif i == len(user) -1: #artinya sudah dicek sampai terakhir
