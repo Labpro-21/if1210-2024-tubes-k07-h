@@ -1,6 +1,6 @@
 ####################F12###############################
 
-def shop_management(role, item_shop, monster_shop, monster):
+def shop_management(role:str, item_shop:str, monster_shop:str, monster:str):
     if role == "Admin":
         #DEFAULT SHOP
         #default monster di shop
@@ -193,4 +193,4 @@ def shop_management(role, item_shop, monster_shop, monster):
                 print()
     elif role == "Agent":
         print("Anda bukan seorang Admin, Anda tidak dapat mengakses Shop Management.")
-    return ''
+    return item_shop, monster_shop
