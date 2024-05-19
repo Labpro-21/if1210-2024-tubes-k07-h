@@ -13,18 +13,31 @@ Adit Satya Dwitama (16523237)
 
 # Features
 > REGISTER            : membuat akun baru yang belum pernah ada ; dapat diakses semua role
+
 > LOGIN               : masuk ke akun yang sudah terdaftar ; dapat diakses semua role
+
 > LOGOUT              : keluar akun yang sedang digunakan ; dapat diakses semua role
+
 > MENU & HELP         : melihat fitur apa saja yang tersedia dan bagaimana cara mengaksesnya ; dapat diakses semua role
+
 > INVENTORY           : melihat apa saja yang dimiliki oleh Agent ; hanya dapat diakses oleh Agent
+
 > BATTLE              : melawan monster-monster jahat secara random ; hanya dapat diakses oleh Agent
+
 > ARENA               : melatih monster yang dimiliki Agent agar lebih kuat ; hanya dapat diakses oleh Agent
+
 > SHOP & CURRENCY     : membeli monster atau potion dari shop ; hanya dapat diakses oleh Agent
+
 > LABORATORY          : melakukan upgrade level monster ; hanya dapat diakses oleh Agent
+
 > SHOP MANAGEMENT     : menambah, mengubah, dan menghapus sesuatu dari shop ; hanya dapat diakses oleh Admin
+
 > MONSTER MANAGEMENT  : mengatur dan menambahkan monster ke database ; hanya dapat diakses oleh Admin
+
 > LOAD                : melakukan load game dan mengakses database
+
 > SAVE                : menyimpan perubahan yang telah terjadi selama permainan ; dapat diakses semua role
+
 > EXIT                : keluar dari permainan ; dapat diakses semua role
 
 # How to Run
