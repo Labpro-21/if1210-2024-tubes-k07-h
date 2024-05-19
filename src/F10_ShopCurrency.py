@@ -8,7 +8,7 @@ def shop(role:str, monster_shop:str, item_shop:str, monster:str, monster_invento
 
         #default potion di shop
         item_in_shop = []
-        for i in range (len(item_shop)):
+        for i in range (3):
             item_in_shop.append(item_shop[i])
 
         quit = False
@@ -38,19 +38,20 @@ def shop(role:str, monster_shop:str, item_shop:str, monster:str, monster_invento
                     if owca >= int(monster_in_shop[int(beli_monster)][3]):
                         print(f"Berhasil membeli item {monster_in_shop[int(beli_monster)][1]}")
                         monster_inventory.append(monster_in_shop[beli_monster])
-                        owca -= int(monster_in_shop[int(beli_monster)][3])
-                        monster_shop[int(beli_monster)][1] = int(monster_shop[int(beli_monster)][1]) - 1
+                        owca -= int(monster_in_shop[int(beli_monster)][3]) #owca berkurang
+                        monster_shop[int(beli_monster)][1] = int(monster_shop[int(beli_monster)][1]) - 1 #stock monster berkurang
                     else:
                         print("OC-mu tidak cukup.")
                     action = input(">>>Pilih aksi (lihat/beli/keluar):")
+
                 elif option_beli == "potion":
                     beli_potion = int(input(">>> Masukkan id potion: "))
                     jumlah_beli = int(input(">>> Masukkan jumlah: "))
                     if owca >= int(item_in_shop[beli_potion][2]) * jumlah_beli:
                         print(f"Berhasil membeli item: {jumlah_beli} {item_in_shop[beli_potion][0]}. Item sudah masuk ke inventory-mu")
                         item_inventory.append(item_shop[beli_potion])
-                        owca -= int(item_in_shop[beli_potion][2]) * jumlah_beli
-                        item_shop[beli_potion][1] = int(item_shop[beli_potion][1]) - jumlah_beli
+                        owca -= int(item_in_shop[beli_potion][2]) * jumlah_beli #owca berkurang
+                        item_shop[beli_potion][1] = int(item_shop[beli_potion][1]) - jumlah_beli #jumlah berkurang
                     else:
                         print("OC-mu tidak cukup.")
                     action = input(">>>Pilih aksi (lihat/beli/keluar):")
