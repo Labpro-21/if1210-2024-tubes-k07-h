@@ -20,6 +20,7 @@ def main(folder):
     from src.F11_Laboratory import laboratory
     from src.F12_ShopManagement import shop_management
     from src.F13_MonsterManagement import monster_management
+    from src.F15_Save import saving_to_folder
     from src.F16_Exit import keluar
 
     #INISIASI KONDISI
@@ -71,7 +72,7 @@ def main(folder):
         elif cmd == "MONSTER":
             monster_management(username, role, monster)
         elif cmd == "SAVE":
-            save()
+            saving_to_folder(user, monster, monster_inventory, item_inventory, monster_shop, item_shop)
         elif cmd == "EXIT":
             keluar()
         else:
