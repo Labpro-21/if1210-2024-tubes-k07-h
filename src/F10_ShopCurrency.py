@@ -45,12 +45,12 @@ def shop(role:str, monster_shop:str, item_shop:str, monster:str, monster_invento
                 print("======================================")
                 if option_beli == "monster":
                     beli_monster = int(input(">>> Masukkan id monster:"))
-                    if owca >= int(monster_in_shop[int(beli_monster)][3]) and monster_shop[int(beli_monster)][1] > 0:
+                    if owca >= int(monster_in_shop[int(beli_monster)][3]) and int(monster_shop[int(beli_monster)][1]) > 0:
                         print(f"Berhasil membeli item {monster_in_shop[int(beli_monster)][1]}")
                         monster_inventory.append(monster_in_shop[beli_monster])
                         owca -= int(monster_in_shop[int(beli_monster)][3]) #owca berkurang
                         monster_shop[int(beli_monster)][1] = int(monster_shop[int(beli_monster)][1]) - 1 #stock monster berkurang
-                    elif owca >= int(monster_in_shop[int(beli_monster)][3]) and monster_shop[int(beli_monster)][1] <= 0: #monster sudah habis
+                    elif owca >= int(monster_in_shop[int(beli_monster)][3]) and int(monster_shop[int(beli_monster)][1]) <= 0: #monster sudah habis
                         print("Tidak dapat membeli monster karena monster telah habis.")
                     else:
                         print("OC-mu tidak cukup.")
