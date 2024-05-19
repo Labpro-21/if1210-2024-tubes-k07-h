@@ -1,4 +1,4 @@
-def laboratory(user_id, monster_inventory, monster, role, owca):
+def laboratory(user_id:str, monster_inventory:str, monster:str, role:str, owca:int):
     if role == "Agent":
         print("█▀ █▀▀ █░░ ▄▀█ █▀▄▀█ ▄▀█ ▀█▀   █▀▄ ▄▀█ ▀█▀ ▄▀█ █▄░█ █▀▀")
         print("▄█ ██▄ █▄▄ █▀█ █░▀░█ █▀█ ░█░   █▄▀ █▀█ ░█░ █▀█ █░▀█ █▄█")
@@ -42,7 +42,7 @@ def laboratory(user_id, monster_inventory, monster, role, owca):
         print("3. Level 3 -> Level 4: 400 OC")
         print("4. Level 4 -> Level 5: 500 OC")
         option = input(">>> Pilih monster: ")
-        if monster_inventory[int(option)][2] == '1' or '2' or '3' or '4':
+        if monster_inventory[int(option)][2] == '1' or '2' or '3' or '4': #masih level dibawah 5
             print(f"{monster[int(option)][1]} akan di-upgrade ke level {int(monster_inventory[int(option)][2]) +1}.")
             print(f"Harga untuk melakukan upgrade {monster[int(option)][1]} adalah {100* int(monster_inventory[int(option)][2])} OC.") #harga 100 kali lipat dari level tujuan
             validasi = input(">>> Lanjutkan upgrade (Y/N): ")
@@ -59,3 +59,4 @@ def laboratory(user_id, monster_inventory, monster, role, owca):
 
     else:
         print("Anda bukan seorang Agent, Anda tidak dapat mengakses Laboratory")
+    return monster_inventory, owca
