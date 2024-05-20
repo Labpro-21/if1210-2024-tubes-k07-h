@@ -100,5 +100,5 @@ def shop(role:str, monster_shop:str, item_shop:str, monster:str, monster_invento
                 print("Input tidak valid. Silahkan pilih opsi lain. (╥﹏╥)")
                 action = input(">>>Pilih aksi (lihat/beli/keluar):")
     elif role == "Admin": #kalau admin ngga bisa beli di shop
-        print("Anda bukan seorang Agent, Anda tidak dapat mengakses Shop and Currency.")
+        print("Anda bukan seorang Agent, Anda tidak dapat mengakses Shop and Currency. ꗃ ")
     return owca, monster_shop, item_shop, monster_inventory, item_inventory
