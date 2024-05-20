@@ -1,4 +1,4 @@
-##############F01################
+
 def register(status: bool, user:str, monster:str, monster_inventory:str, item_inventory:str):
     print('''                      
  █▀█ █▀▀ █▀▀ █ █▀ ▀█▀ █▀▀ █▀█
@@ -44,10 +44,11 @@ def register(status: bool, user:str, monster:str, monster_inventory:str, item_in
                 print("==================================")
                 print(f"Selamat datang Agent {username}. Mari kita mengalahkan Dr. Asep Spakbor dengan {monster[int(monster_awal)][1]}!")
                 user.append([len(user), username, password, 'Agent', '0'])
-                monster_inventory.append([len(user), monster_awal, '1'])
-                item_inventory.append([len(item_inventory), '-', '-'])
-                break
+                monster_inventory.append([str(len(user)-1), monster_awal, '1'])
+                item_inventory.append([str(len(user)-1), '-', '-'])
+                return False, user, monster_inventory, item_inventory
             else:
                 print("==================================")
                 print("Tidak ada pilihan monster tersebut. Silahkan pilih monster yang lain.")
                 print()
+    
