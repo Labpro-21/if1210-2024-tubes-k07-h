@@ -22,6 +22,7 @@ def main(folder):
     from src.F13_MonsterManagement import monster_management
     from src.F15_Save import saving_to_folder
     from src.F16_Exit import keluar
+    import sys
 
     #INISIASI KONDISI
     status = False #artinya belum login
@@ -39,7 +40,11 @@ def main(folder):
     while exit == False:
         cmd = str.upper(input(">>> "))
         if cmd == "REGISTER":
-            register(status, user, monster, monster_inventory, item_inventory)
+            regist_info = register(status, user, monster, monster_inventory, item_inventory)
+            status = regist_info[0]
+            user = regist_info[1]
+            monster_inventory = regist_info[2]
+            item_inventory = regist_info[3]
         elif cmd == "LOGIN":
             user_info = login(user, status)
             status = user_info[0]
@@ -100,7 +105,28 @@ def main(folder):
         elif cmd == "SAVE":
             saving_to_folder(user, monster, monster_inventory, item_inventory, monster_shop, item_shop)
         elif cmd == "EXIT":
-            keluar()
+            exit_info = keluar()
+            if exit_info == 2: # mau menyimpan
+                saving_to_folder
+                print('''
+        ███████╗███████╗███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗██╗
+        ██╔════╝██╔════╝██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║██║
+        ███████╗█████╗  █████╗       ╚████╔╝ ██║   ██║██║   ██║██║
+        ╚════██║██╔══╝  ██╔══╝        ╚██╔╝  ██║   ██║██║   ██║╚═╝
+        ███████║███████╗███████╗       ██║   ╚██████╔╝╚██████╔╝██╗
+        ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚═╝                                                           
+        ''')
+                sys.exit()
+            else: #exit info = 1
+                print('''
+        ███████╗███████╗███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗██╗
+        ██╔════╝██╔════╝██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║██║
+        ███████╗█████╗  █████╗       ╚████╔╝ ██║   ██║██║   ██║██║
+        ╚════██║██╔══╝  ██╔══╝        ╚██╔╝  ██║   ██║██║   ██║╚═╝
+        ███████║███████╗███████╗       ██║   ╚██████╔╝╚██████╔╝██╗
+        ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚═╝                                                           
+        ''')
+            sys.exit()
         else:
             print("Maaf, fitur tersebut tidak tersedia. Mohon pilih fitur yang tersedia.")
 
