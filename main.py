@@ -22,7 +22,7 @@ def main(folder):
     from src.F13_MonsterManagement import monster_management
     from src.F15_Save import saving_to_folder
     from src.F16_Exit import keluar
-    import sys
+
 
     #INISIASI KONDISI
     status = False #artinya belum login
@@ -101,32 +101,11 @@ def main(folder):
             monster_inventory = lab_info[0]
             owca = lab_info[1]
         elif cmd == "MONSTER":
-            monster = monster_management(username, role, monster)
+            monster = monster_management(role, monster)
         elif cmd == "SAVE":
             saving_to_folder(user, monster, monster_inventory, item_inventory, monster_shop, item_shop)
         elif cmd == "EXIT":
-            exit_info = keluar()
-            if exit_info == 2: # mau menyimpan
-                saving_to_folder
-                print('''
-        ███████╗███████╗███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗██╗
-        ██╔════╝██╔════╝██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║██║
-        ███████╗█████╗  █████╗       ╚████╔╝ ██║   ██║██║   ██║██║
-        ╚════██║██╔══╝  ██╔══╝        ╚██╔╝  ██║   ██║██║   ██║╚═╝
-        ███████║███████╗███████╗       ██║   ╚██████╔╝╚██████╔╝██╗
-        ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚═╝                                                           
-        ''')
-                sys.exit()
-            else: #exit info = 1
-                print('''
-        ███████╗███████╗███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗██╗
-        ██╔════╝██╔════╝██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║██║
-        ███████╗█████╗  █████╗       ╚████╔╝ ██║   ██║██║   ██║██║
-        ╚════██║██╔══╝  ██╔══╝        ╚██╔╝  ██║   ██║██║   ██║╚═╝
-        ███████║███████╗███████╗       ██║   ╚██████╔╝╚██████╔╝██╗
-        ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚═╝                                                           
-        ''')
-            sys.exit()
+            keluar(user, monster, monster_inventory, item_inventory, monster_shop, item_shop)
         else:
             print("Maaf, fitur tersebut tidak tersedia. Mohon pilih fitur yang tersedia.")
 
